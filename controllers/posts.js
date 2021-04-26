@@ -20,6 +20,7 @@ function show(req, res){
     });
 };
 
+// renders page that allows you to submit a new post. The path is 'posts/new' and the 
 function newPost(req, res){
     res.render('posts/new', {title: 'Add Post'});
 };

@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <title>Here are your posts</title>
 </head>
 <body>
     <h1>
         Here are your posts
     </h1>
-    <table id="list">
+    <!-- <table id="list">
         <thead>
           <tr>
             <th>Title</th>
@@ -23,11 +24,25 @@
             <tr>
               <td><%= p.title %></td>
               <td><%= p.content %></td>
+              <td><%= p.author %></td>
               <td><a href="/posts/<%= p._id %>">DETAILS</a></td>
             </tr>
             <% }); %>
           </tbody>
-        </table>
+        </table> -->
+
+        <div id="container">
+          <% posts.forEach(function(p){ %>
+            <div id="post">
+              <tr>
+                <td>"<%= p.title %>"</td>
+                <!-- <td><%= p.content %></td> -->
+                <td>By, <%= p.author %></td>
+                <td><a href="/posts/<%= p._id %>">DETAILS</a></td>
+              </tr>
+            </div>
+         <% }) %>
+        </div>
     <a href="posts/new">Create a New Post</a>
 </body>
 </html>
