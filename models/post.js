@@ -1,6 +1,14 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema; // shortcut variable
 
+const commentSchema = new Schema({
+    comment: String,
+    like: {
+        type: Boolean,
+        default: false,
+    }
+}, {timestamps: true});
+
 const postSchema = new Schema({
     title: {
         type: String,
@@ -21,7 +29,8 @@ const postSchema = new Schema({
     nowTrending: {
         type: Boolean,
         default: false,
-    }
+    },
+    comments: [commentSchema]
 }, { timestamps: true });
 
 
