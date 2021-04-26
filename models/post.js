@@ -14,6 +14,10 @@ const postSchema = new Schema({
         type: String,
         required: true,
     },
+    keywords: {
+        type: String,
+        required: true,
+    }
 }, { timestamps: true });
 
 
