@@ -17,6 +17,10 @@ const postSchema = new Schema({
     keywords: {
         type: String,
         required: true,
+    },
+    nowTrending: {
+        type: Boolean,
+        default: false,
     }
 }, { timestamps: true });
 

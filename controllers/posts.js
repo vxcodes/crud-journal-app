@@ -28,6 +28,9 @@ function newPost(req, res){
 
 function create(req, res) {
     
+    // convert nowShowing's checkbox of nothing or "on" to boolean
+    req.body.nowTrending = !!req.body.nowTrending;
+
     for(let key in req.body) {
         if(req.body[key] === '') delete req.body[key];
     };
