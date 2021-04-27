@@ -15,7 +15,7 @@
   <h2>Comments</h2>
   <form id="add-comment-form" method="POST" action="/posts/<%= post._id %>/comments">
     <label>Comment:</label>
-    <textarea name="comments"></textarea>
+    <textarea name="content"></textarea>
     <label>Like:</label>
     <select name="like">
       <option value="like">like</option>
@@ -37,8 +37,8 @@
         <% post.comments.forEach(function(c) { %>
           <tr>
             <td><%= c.createdAt.toLocaleDateString() %></td>
-            <td><%= c.comment %></td>
-            <td><%= c.like %></td>
+            <td><%= c.content %></td>
+            <!-- <td><%= c.like %></td> -->
           </tr>
         <% }); %>
       </tbody>

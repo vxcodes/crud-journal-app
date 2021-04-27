@@ -2,11 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema; // shortcut variable
 
 const commentSchema = new Schema({
-    comment: String,
-    like: {
-        type: Boolean,
-        default: false,
-    },
+    content: String,
 }, {timestamps: true});
 
 const postSchema = new Schema({
