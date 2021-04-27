@@ -6,7 +6,7 @@ const commentSchema = new Schema({
     like: {
         type: Boolean,
         default: false,
-    }
+    },
 }, {timestamps: true});
 
 const postSchema = new Schema({

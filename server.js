@@ -7,6 +7,7 @@ require('./config/database');
 
 const indexRouter = require('./routes/index');
 const postsRouter = require('./routes/posts');
+const commentsRouter = require('./routes/comments')
 
 // Set up express app
 const app = express();
@@ -23,6 +24,7 @@ app.use(express.static('public'));
 // Mount routes with app.use()
 app.use('/', indexRouter);
 app.use('/posts', postsRouter);
+app.use('/', commentsRouter);
 
 
 app.listen(port, function(){
