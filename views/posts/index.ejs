@@ -36,6 +36,11 @@
           <% posts.forEach(function(p){ %>
             <div id="post">
               <tr>
+                <li>
+                  <form action="/posts/<%= p._id %>?_method=DELETE" method="POST">
+                    <button type="submit">delete</button>
+                  </form>
+                </li>
                 <td>"<%= p.title %>"</td>
                 <!-- <td><%= p.content %></td> -->
                 <td>By, <%= p.author %></td>

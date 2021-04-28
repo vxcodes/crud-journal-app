@@ -1,3 +1,4 @@
+const post = require('../models/post');
 const Post = require('../models/post');
 
 module.exports = {
@@ -6,6 +7,10 @@ module.exports = {
     create,
     new: newPost,
     index,
+    delete: deletePost,
+    // deleteOne,
+    edit,
+
 };
 
 function index(req, res){
@@ -16,7 +21,7 @@ function index(req, res){
 
 function show(req, res){
     Post.findById(req.params.id, function(err, post){
-        res.render('posts/show', {title: 'Post Content', post});
+        res.render('posts/show', {title: 'Post Content', post, postId: req.params.id});
     });
 };
 
@@ -41,3 +46,20 @@ function create(req, res) {
     });    
 };
 
+// function deleteOne(p){
+//     posts.p.remove()
+// };
+
+function deletePost(req, res){
+    Post.findByIdAndDelete(req.params.id, function(err, posts){
+        if(err) return res.redirect('/posts/new');
+    });
+        res.redirect('/posts');
+};
+
+
+function edit(req, res){
+    res.render('posts/edit', {
+        post: post.getOne(req.params.id)
+    });
+};

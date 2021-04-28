@@ -10,19 +10,8 @@
     <div><%=post.keywords %></div>
     <div>Now Trending: </div>
     <div><%= post.nowTrending ? 'Yes' : 'Nope' %></div>
+    <a href="/posts/<%= postId %>/edit">Edit This Post</a>
   </section>
-
-  <h2>Comments</h2>
-  <form id="add-comment-form" method="POST" action="/posts/<%= post._id %>/comments">
-    <label>Comment:</label>
-    <textarea name="content"></textarea>
-    <label>Like:</label>
-    <select name="like">
-      <option value="like">like</option>
-      <option value="dislike">dislike</option>
-    </select>
-    <input type="submit" value="Add Comment">
-  </form>
 
   <% if (post.comments.length) { %>
     <table>
@@ -48,3 +37,15 @@
   <% } %>
 
   <%- include('../partials/footer') %>
+
+  <h2>Comments</h2>
+  <form id="add-comment-form" method="POST" action="/posts/<%= post._id %>/comments">
+    <label>Comment:</label>
+    <textarea name="content"></textarea>
+    <label>Like:</label>
+    <select name="like">
+      <option value="like">like</option>
+      <option value="dislike">dislike</option>
+    </select>
+    <input type="submit" value="Add Comment">
+  </form>
