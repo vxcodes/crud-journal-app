@@ -8,8 +8,8 @@ module.exports = {
     new: newPost,
     index,
     delete: deletePost,
-    // deleteOne,
-    edit,
+    edit: editPost,
+    update,
 
 };
 
@@ -46,9 +46,7 @@ function create(req, res) {
     });    
 };
 
-// function deleteOne(p){
-//     posts.p.remove()
-// };
+
 
 function deletePost(req, res){
     Post.findByIdAndDelete(req.params.id, function(err, posts){
@@ -57,9 +55,18 @@ function deletePost(req, res){
         res.redirect('/posts');
 };
 
+function editPost(req,res){
+        res.render('posts/edit', {
+            postId: req.params.id
+        })
+};
 
-function edit(req, res){
-    res.render('posts/edit', {
-        post: post.getOne(req.params.id)
+function update(req, res){
+    req.body.done = false;
+    Post.findByIdAndUpdate(req.params.id, update, {title, content, author, keywords, nowTrending}, function(err,posts){
+        if(err) return res.redirect('/posts/edit');
     });
+        
+        res.redirect('/posts')
+
 };

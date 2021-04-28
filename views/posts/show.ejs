@@ -10,8 +10,8 @@
     <div><%=post.keywords %></div>
     <div>Now Trending: </div>
     <div><%= post.nowTrending ? 'Yes' : 'Nope' %></div>
-    <a href="/posts/<%= postId %>/edit">Edit This Post</a>
   </section>
+  <a href="/posts/<%= postId %>/edit">Edit Post</a>
 
   <% if (post.comments.length) { %>
     <table>
