@@ -60,6 +60,8 @@ function editPost(req,res){
         })
 };
 
+
+// // Hard coded update function, nowTrending was faulty..needs to be Boolean
 // function update(req, res){
 //     req.body.done = false;
 //     console.log(req.params.id);
@@ -77,6 +79,9 @@ function editPost(req,res){
 //     })
 // };
 
+
+// nowTrending returned an empty string when it was set as a Boolean, so !!(double bang operator) turned it into a Boolean, thus the update
+// function works now!!!! 
 function update(req, res){
     req.body.nowTrending = !!req.body.nowTrending
     Post.findByIdAndUpdate(req.params.id, req.body, function(err, post){
