@@ -9,20 +9,21 @@
 <body>
 
     <h1>Edit Post</h1>
+    <%= console.log(postId,'is the post id') %>
     <form id="updated-form" action="/posts/<%= postId %>?_method=PUT" method="POST">
         <label>Title:
-            <input type="string" value="" name="title">
+            <input id="title" type="string" value="" name="title">
         </label>Content:
-            <input type="string" value="" name="content"> 
+            <input id="content" type="string" value="" name="content"> 
         </label>
         </label>Author:
-            <input type="string" value="" name="author">
+            <input id="author" type="string" value="" name="author">
         </label>
         <label>Keywords:
-            <input type="string" value="" name="keywords">
+            <input id="keywords" type="string" value="" name="keywords">
         </label>
         <label>Now Trending:
-            <input type="checkbox" value="" name="nowTrending" checked>
+            <input id="nowTrending" type="checkbox" value="" name="nowTrending" checked>
         </label>
         <input type="submit" value="Edit Post">
     </form>

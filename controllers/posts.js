@@ -1,4 +1,3 @@
-const post = require('../models/post');
 const Post = require('../models/post');
 
 module.exports = {
@@ -61,12 +60,27 @@ function editPost(req,res){
         })
 };
 
-function update(req, res){
-    req.body.done = false;
-    Post.findByIdAndUpdate(req.params.id, update, {title, content, author, keywords, nowTrending}, function(err,posts){
-        if(err) return res.redirect('/posts/edit');
-    });
-        
-        res.redirect('/posts')
+// function update(req, res){
+//     req.body.done = false;
+//     console.log(req.params.id);
+//     console.log(req.body,'is the req body');
+//     Post.findById(req.params.id, function(err, post){
+//         console.log(posts, 'is the post')
+//         post.title = req.body.title
+//         post.content = req.body.content
+//         post.author = req.body.author
+//         post.keywords = req.body.keywords
+//         post.nowTrending = !!req.body.nowTrending
+//         post.save(function(err, post){
+//             res.redirect('/posts')
+//         })
+//     })
+// };
 
-};
+function update(req, res){
+    req.body.nowTrending = !!req.body.nowTrending
+    Post.findByIdAndUpdate(req.params.id, req.body, function(err, post){
+        console.log(post, 'is the post')
+        res.redirect('/posts')
+    });
+}
