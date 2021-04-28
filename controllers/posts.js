@@ -1,6 +1,7 @@
 const Post = require('../models/post');
 
 module.exports = {
+
     index,
     show,
     create,
@@ -11,6 +12,8 @@ module.exports = {
     update,
 
 };
+
+
 
 function index(req, res){
     Post.find({}, function(err, posts) {
