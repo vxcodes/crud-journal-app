@@ -1,7 +1,7 @@
 const Post = require('../models/post');
 
 module.exports = {
-
+    main,
     index,
     show,
     create,
@@ -13,6 +13,9 @@ module.exports = {
 
 };
 
+function main(req, res){
+    res.render('index', {title: 'Homepage'})
+};
 
 
 function index(req, res){
@@ -44,7 +47,7 @@ function create(req, res) {
     
     Post.create(req.body, function(err, post) {
         if(err) return res.redirect('/posts/new');
-        res.redirect('/posts');
+        res.redirect('index');
     });    
 };
 
@@ -54,7 +57,7 @@ function deletePost(req, res){
     Post.findByIdAndDelete(req.params.id, function(err, posts){
         if(err) return res.redirect('/posts/new');
     });
-        res.redirect('/posts');
+        res.redirect('index');
 };
 
 function editPost(req,res){
@@ -89,6 +92,6 @@ function update(req, res){
     req.body.nowTrending = !!req.body.nowTrending
     Post.findByIdAndUpdate(req.params.id, req.body, function(err, post){
         console.log(post, 'is the post')
-        res.redirect('/posts')
+        res.redirect('posts/index')
     });
 }

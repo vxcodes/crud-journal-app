@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>Your Journal</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <h1>Journal</h1>
+    <p>Welcome to Your Journal</p>
     <nav>
-      <!-- <img src="/images/camera.svg"> -->
       <a href="/posts/new" <%- title === 'Add Post' ? 'class="active"' : '' %>> + ADD POST</a>
-      <a href="/posts" <%- title === 'All Posts' ? 'class="active"' : '' %>>YOUR POSTS</a>
-      <a href="/" <%- title === 'Home' ? 'class="active"' : '' %>>HOME</a>
+      <a href="/posts/index" <%- title === 'All Posts' ? 'class="active"' : '' %>>YOUR POSTS</a>
+      <a href="/posts" <%- title === 'Home' ? 'class="active"' : '' %>>HOME</a>
     </nav>
   </body>
 </html>
