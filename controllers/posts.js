@@ -92,6 +92,6 @@ function update(req, res){
     req.body.nowTrending = !!req.body.nowTrending
     Post.findByIdAndUpdate(req.params.id, req.body, function(err, post){
         console.log(post, 'is the post')
-        res.redirect('posts/index')
+        res.redirect('index')
     });
 }
