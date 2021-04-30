@@ -1,7 +1,13 @@
+/*
+    Below is styling for mainpage views/index.ejs
+*/
+
 #quoteBanner {
     color: white;
     font-family:'Montserrat', sans-serif;
     font-weight: bold;
+    /* background-color: #9a1750; */
+    background-image: linear-gradient(#85dcb8, #41b3a3);
 }
 
 #mainNav {
@@ -12,36 +18,62 @@
     font-weight: bold;
 }
 
+#link{
+    color: white;
+    text-decoration: none;
+    background-color: none;
+}
+
+#trendingArticlesLink {
+    color: black;
+    text-decoration: none;
+    background-color: none;
+}
+
 #mainBackground {
     /* background-image: linear-gradient(#A8D0E6, #DA7B93); */
-    background-image: linear-gradient(#FFCDA5, #EE4D5F);
+    /* background-image: linear-gradient(#FFCDA5, #EE4D5F); */
+    /* background-color:  #E3E2DF; */
+    /* background-color:  white; */
+    /* background-color:  #c38d9e; */
+    background-color: #ffffff;
+    background-image: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);
 }
 
 #trendingCards {
     /* background-color: #E8A87C; */
-    background-color: #FAF5EF;
+    background-color:white;
     border-radius: 15px 50px;
     font-family:'Montserrat', sans-serif;
     font-weight: bold;
-    color: white;
+    border: none;
+    color: black;
 
 }
 
 #trendingArticlesText {
-    color: white;
+    color: black;
     font-family:'Montserrat', sans-serif;
     font-weight: bold;
 }
 
 #topicsText{
-    color:white;
+    color:black;
     font-family:'Montserrat', sans-serif;
     font-weight: bold;
 }
 
+#mainCarousel {
+    background-color: white;
+}
+
+/* 
+    Below is styling for posts/index.ejs 
+*/
+
 #showContainer {
     display: grid;
-    grid-template-columns: 300px 300px 300px 300px 300px;
+    grid-template-columns: 300px 300px ;
     grid-template-rows: 230px;
     font-family:'Montserrat', sans-serif;
     font-weight: bold;
@@ -49,8 +81,8 @@
 }
 
 #showBody {
-    background-image: linear-gradient(#DA7B93, #2E151B);
-    color: white;
+    background-color: white;
+    color: black;
 }
 
 #showHeader {
@@ -60,6 +92,33 @@
 
 #post {
     /* border-radius: 15px 50px; */
-    background-color: #E27D60;
+    background-color:white;
+    border: none;
 
 }
+
+#popSubjectContainer {
+    background-image: linear-gradient(#85dcb8, #41b3a3);
+}
+
+/* 
+    Below is styling for post full display posts/show.ejs
+*/
+
+#postTitle {
+    text-align: center;
+}
+
+#postAuthor {
+    text-align: center;
+}
+
+#postContent{
+    text-align: center
+}
+
+/*
+    Below is styling for posts/new.ejs
+*/
+
+
