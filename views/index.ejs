@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="../public/css/style.css" rel="stylesheet" >
+    <link href="/public/css/style.css" rel="stylesheet" >
     <script defer src="js/scripts.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -10,7 +10,7 @@
     <title>Your Journal</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
-  <body id="mainBackground" class="bg-dark">
+  <body id="mainBackground">
     <!--Navigation-->
     <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
       <div class="container-fluid">
@@ -22,23 +22,24 @@
     </nav>
 
     <!--Two Column Quote Banner Start-->
-    <div class="container-fluid padding bg-success">
-      <div class="row-padding">
-        <div class = "col-lg-6">
-          <h2>Our Focus</h2>
-          <p>
-            Inspire is a platform that aims to create a safe space for productive discourse that engages our users
-            in through provoking and meaningful discussions.
-          </p>
-          <p>
-            We are a community inspired to create and share our perspectives to promote inclusivity and spread knowledge.
-            Get started to embark on your journey to self-development, expression, and exploration.
-          </p>
-          <button type="button" class="btn btn-outline-warning">Get Started</button>
-          </div>
-          <div class="col-lg-6">
-            <img src="/imgs/main_title.jpeg" class="img-fluid">
-          </div>
+    <div id="quoteBanner" class="container-fluid padding">
+    <div class="row padding">
+      <div class = "col-lg-6">
+        <h2>Our Focus</h2>
+        <p>
+          Inspire is a platform that aims to create a safe space for productive discourse that engages our users
+          in through provoking and meaningful discussions.
+        </p>
+        <p>
+          We are a community inspired to create and share our perspectives to promote inclusivity and spread knowledge.
+          Get started to embark on your journey to self-development, expression, and exploration.
+        </p>
+      </div>
+      <div class="col-lg-6">
+        <img src="/imgs/paint.jpg" class="img-fluid" style="height: 300px;width: 1000px;">
+      </div>
+        <!-- <button type="button" class="btn btn-outline-warning">Get Started</button> -->
+
       </div>
     </div>
     <!--Two Column Quote Banner End-->
@@ -52,9 +53,10 @@
           <% posts.forEach(function(p){ %>
           <% if(p.nowTrending == true){ %>
             <div class = "col-3">
-              <div id="trendingCards" class="card">
-                <a href="/posts/<%= postId %>"><h4 class="card-title"><%= p.title %></h4></a>
+              <div id="trendingCards" class="card border-warning" style="height: 200px; width: 300px;">
+                <a href="/posts/<%= p._id %>"><h4 class="card-title"><%= p.title %></h4></a>
                 <p class="card-text"><%= p.author %></p>
+                <p class="card-text"><%= p.keywords %></p>
               </div>
             </div>
           <% } %>
@@ -69,8 +71,9 @@
             <% posts.forEach(function(p){ %>
             <% if(p.nowTrending == true){ %>
               <div class = "col-3">
-                <div id="trendingCards" class="card">
-                  <a href="/posts/<%= postId %>"><h4 class="card-title"><%= p.title %></h4></a>
+                <div id="trendingCards" class="card border-warning" style="height: 200px; width: 300px;">
+                  <a href="/posts/<%= p._id %>"><h4 class="card-title"><%= p.title %></h4></a>
+                  <p class="card-text"><%= p.author %></p>
                   <p class="card-text"><%= p.keywords %></p>
                 </div>
               </div>
@@ -105,7 +108,7 @@
       <div class="row">
         <div class="col-md-4">
           <div class="card">
-            <img class="card-img-top" src="">
+            <img class="card-img-top" src="/imgs/business.jpg">
             <div class="card-body">
               <h4 class="card-title">Business</h4>
               <a href="#" class="btn btn-outline-secondary">See Articles</a>
@@ -115,7 +118,7 @@
 
         <div class="col-md-4">
           <div class="card">
-            <img class="card-img-top" src="">
+            <img class="card-img-top" src="/imgs/self-dev.jpg">
             <div class="card-body">
               <h4 class="card-title">Self-Development</h4>
               <a href="#" class="btn btn-outline-secondary">See Articles</a>
@@ -125,19 +128,9 @@
 
         <div class="col-md-4">
           <div class="card">
-            <img class="card-img-top" src="">
+            <img class="card-img-top" src="/imgs/technology.jpg">
             <div class="card-body">
               <h4 class="card-title">Technology</h4>
-              <a href="#" class="btn btn-outline-secondary">See Articles</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="card">
-            <img class="card-img-top" src="">
-            <div class="card-body">
-              <h4 class="card-title">Cooking</h4>
               <a href="#" class="btn btn-outline-secondary">See Articles</a>
             </div>
           </div>

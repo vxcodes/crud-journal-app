@@ -15,7 +15,7 @@ module.exports = {
 
 function main(req, res){
     Post.find({}, function(err, posts) {
-        res.render('index', {title: 'Homepage', posts, postId: req.params.id});
+        res.render('index', {title: 'Homepage', posts});
     });
 };
 
