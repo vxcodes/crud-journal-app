@@ -23,6 +23,7 @@
     border-radius: 15px 50px;
     font-family:'Montserrat', sans-serif;
     font-weight: bold;
+    color: white;
 
 }
 
@@ -40,9 +41,25 @@
 
 #showContainer {
     display: grid;
-    grid-template-columns: 300px 300px 300px 300px;
-    grid-template-rows: auto;
+    grid-template-columns: 300px 300px 300px 300px 300px;
+    grid-template-rows: 230px;
     font-family:'Montserrat', sans-serif;
     font-weight: bold;
+
+}
+
+#showBody {
+    background-image: linear-gradient(#DA7B93, #2E151B);
+    color: white;
+}
+
+#showHeader {
+    font-family:'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+#post {
+    /* border-radius: 15px 50px; */
+    background-color: #E27D60;
 
 }
