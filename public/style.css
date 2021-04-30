@@ -1,11 +1,15 @@
 #quoteBanner {
     color: white;
+    font-family:'Montserrat', sans-serif;
+    font-weight: bold;
 }
 
 #mainNav {
     /* background-color: #85dcb8; */
     background-color: black;
     color: white;
+    font-family:'Montserrat', sans-serif;
+    font-weight: bold;
 }
 
 #mainBackground {
@@ -17,17 +21,28 @@
     /* background-color: #E8A87C; */
     background-color: #FAF5EF;
     border-radius: 15px 50px;
+    font-family:'Montserrat', sans-serif;
+    font-weight: bold;
 
 }
 
 #trendingArticlesText {
     color: white;
+    font-family:'Montserrat', sans-serif;
+    font-weight: bold;
 }
 
 #topicsText{
     color:white;
+    font-family:'Montserrat', sans-serif;
+    font-weight: bold;
 }
 
 #showContainer {
     display: grid;
+    grid-template-columns: 300px 300px 300px 300px;
+    grid-template-rows: auto;
+    font-family:'Montserrat', sans-serif;
+    font-weight: bold;
+
 }
