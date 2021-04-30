@@ -14,7 +14,9 @@ module.exports = {
 };
 
 function main(req, res){
-    res.render('index', {title: 'Homepage'})
+    Post.find({}, function(err, posts) {
+        res.render('index', {title: 'Homepage', posts, postId: req.params.id});
+    });
 };
 
 

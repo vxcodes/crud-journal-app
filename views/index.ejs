@@ -1,16 +1,149 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="../public/css/style.css" rel="stylesheet" >
+    <script defer src="js/scripts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <title>Your Journal</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
-  <body>
-    <h1>Journal</h1>
-    <p>Welcome to Your Journal</p>
-    <nav>
-      <a href="/posts/new" <%- title === 'Add Post' ? 'class="active"' : '' %>> + ADD POST</a>
-      <a href="/posts/index" <%- title === 'All Posts' ? 'class="active"' : '' %>>YOUR POSTS</a>
-      <a href="/posts" <%- title === 'Home' ? 'class="active"' : '' %>>HOME</a>
+  <body id="mainBackground" class="bg-dark">
+    <!--Navigation-->
+    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">INSPIRE</a>
+        <a href="/posts/new" <%- title === 'Add Post' ? 'class="active"' : '' %>> + ADD POST</a>
+        <a href="/posts/index" <%- title === 'All Posts' ? 'class="active"' : '' %>>YOUR POSTS</a>
+        <a href="/posts" <%- title === 'Home' ? 'class="active"' : '' %>>HOME</a>
+      </div>
     </nav>
+
+    <!--Two Column Quote Banner Start-->
+    <div class="container-fluid padding bg-success">
+      <div class="row-padding">
+        <div class = "col-lg-6">
+          <h2>Our Focus</h2>
+          <p>
+            Inspire is a platform that aims to create a safe space for productive discourse that engages our users
+            in through provoking and meaningful discussions.
+          </p>
+          <p>
+            We are a community inspired to create and share our perspectives to promote inclusivity and spread knowledge.
+            Get started to embark on your journey to self-development, expression, and exploration.
+          </p>
+          <button type="button" class="btn btn-outline-warning">Get Started</button>
+          </div>
+          <div class="col-lg-6">
+            <img src="/imgs/main_title.jpeg" class="img-fluid">
+          </div>
+      </div>
+    </div>
+    <!--Two Column Quote Banner End-->
+
+    <h2 class="text-center">Trending Articles</h2>
+    <!--nowTrending Slider 1 start-->
+    <div id="mainCarousel" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div id="container-one" class="carousel-item active">
+          <div class="row padding">
+          <% posts.forEach(function(p){ %>
+          <% if(p.nowTrending == true){ %>
+            <div class = "col-3">
+              <div id="trendingCards" class="card">
+                <a href="/posts/<%= postId %>"><h4 class="card-title"><%= p.title %></h4></a>
+                <p class="card-text"><%= p.author %></p>
+              </div>
+            </div>
+          <% } %>
+          <% }) %>
+          </div>
+        </div>
+        <!--NowTrending Slider 1 end-->
+        <!--Slider 2 start-->
+        <div>
+          <div id="container-two" class="carousel-item">
+            <div class="row padding">
+            <% posts.forEach(function(p){ %>
+            <% if(p.nowTrending == true){ %>
+              <div class = "col-3">
+                <div id="trendingCards" class="card">
+                  <a href="/posts/<%= postId %>"><h4 class="card-title"><%= p.title %></h4></a>
+                  <p class="card-text"><%= p.keywords %></p>
+                </div>
+              </div>
+            <% } %>
+            <% }) %>
+            </div>
+          </div>
+      </div>
+        <!--Slider 2 end-->
+      <a class="carousel-control-prev bg-light" href="#mainCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next bg-light" href="#mainCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
+    <!--Find By Subject Header-->
+    <div class="container-fluid-padding">
+      <div class="row welcome text-center">
+        <div class="col-12">
+          <h2>Topics</h2>
+          <hr>
+        </div>
+      </div>
+    </div>
+
+    <!--Popular subject cards (are populated by keyword selected in dropdown)-->
+    <div class="container-fluid-padding">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top" src="">
+            <div class="card-body">
+              <h4 class="card-title">Business</h4>
+              <a href="#" class="btn btn-outline-secondary">See Articles</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top" src="">
+            <div class="card-body">
+              <h4 class="card-title">Self-Development</h4>
+              <a href="#" class="btn btn-outline-secondary">See Articles</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top" src="">
+            <div class="card-body">
+              <h4 class="card-title">Technology</h4>
+              <a href="#" class="btn btn-outline-secondary">See Articles</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top" src="">
+            <div class="card-body">
+              <h4 class="card-title">Cooking</h4>
+              <a href="#" class="btn btn-outline-secondary">See Articles</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Popular subject cards end-->
   </body>
 </html>
