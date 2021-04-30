@@ -8,13 +8,20 @@
     <script defer src="js/scripts.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link href="style.css" rel="stylesheet">
+    <link href="/style.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <title>Here are your posts</title>
 </head>
 <body>
-  <%- include('../partials/header') %>
+  <nav id="mainNav" class="navbar navbar-expand-md navbar-light sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">INSPIRE</a>
+      <a href="/posts/new" <%- title === 'Add Post' ? 'class="active"' : '' %>> + ADD POST</a>
+      <a href="/posts/index" <%- title === 'All Posts' ? 'class="active"' : '' %>>YOUR POSTS</a>
+      <a href="/posts" <%- title === 'Home' ? 'class="active"' : '' %>>HOME</a>
+    </div>
+  </nav>
     <h1>
         Here are your posts
     </h1>
@@ -40,16 +47,18 @@
 
         <div id="showContainer">
           <% posts.forEach(function(p){ %>
-            <div id="post" class="card">
-              <div class="col-3">
+            <div id="post" class="card" style="height: 200px; width: 230px;">
+              <div class="card-body">
                 <tr>
+                  <h4 class="card-title"><%= p.title %></h4>
+                  <h6 class="card-subtitle mb-2 text-muted"><%= p.content %></h6>
+                  <p class="card-text">By, <%= p.author %></p>
+                  <p class="card-text"><a href="/posts/<%= p._id %>">DETAILS</a></p>
                   <form action="/posts/<%= p._id %>?_method=DELETE" method="POST">
-                    <button type="submit">delete</button>
+                    <button class="btn-outline-info btn-sm" type="submit">delete</button>
                   </form>
-                  <td>"<%= p.title %>"</td>
-                  <td>By, <%= p.author %></td>
-                  <td><a href="/posts/<%= p._id %>">DETAILS</a></td>
                 </tr>
+
               </div>
             </div>
          <% }) %>

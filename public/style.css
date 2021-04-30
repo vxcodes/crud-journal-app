@@ -3,15 +3,19 @@
 }
 
 #mainNav {
-    background-color: #85dcb8;
+    /* background-color: #85dcb8; */
+    background-color: black;
+    color: white;
 }
 
 #mainBackground {
-    background-image: linear-gradient(#A8D0E6, #DA7B93);
+    /* background-image: linear-gradient(#A8D0E6, #DA7B93); */
+    background-image: linear-gradient(#FFCDA5, #EE4D5F);
 }
 
 #trendingCards {
-    background-color: #E8A87C;
+    /* background-color: #E8A87C; */
+    background-color: #FAF5EF;
     border-radius: 15px 50px;
 
 }
@@ -22,4 +26,8 @@
 
 #topicsText{
     color:white;
+}
+
+#showContainer {
+    display: grid;
 }

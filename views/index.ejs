@@ -44,6 +44,7 @@
     <!--Two Column Quote Banner End-->
 
     <h2 id="trendingArticlesText" class="text-left">Trending Articles</h2>
+    <hr>
     <!--nowTrending Slider 1 start-->
     <div id="mainCarousel" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
@@ -52,7 +53,7 @@
           <% posts.forEach(function(p){ %>
           <% if(p.nowTrending == true){ %>
             <div class = "col-3">
-              <div id="trendingCards" class="card border-warning" style="height: 200px; width: 300px;">
+              <div id="trendingCards" class="card" style="height: 200px; width: 300px;">
                 <a href="/posts/<%= p._id %>"><h4 class="card-title"><%= p.title %></h4></a>
                 <p class="card-text"><%= p.author %></p>
                 <p class="card-text"><%= p.keywords %></p>
@@ -70,7 +71,7 @@
             <% posts.forEach(function(p){ %>
             <% if(p.nowTrending == true){ %>
               <div class = "col-3">
-                <div id="trendingCards" class="card border-warning" style="height: 200px; width: 300px;">
+                <div id="trendingCards" class="card" style="height: 200px; width: 300px;">
                   <a href="/posts/<%= p._id %>"><h4 class="card-title"><%= p.title %></h4></a>
                   <p class="card-text"><%= p.author %></p>
                   <p class="card-text"><%= p.keywords %></p>
