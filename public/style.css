@@ -1,5 +1,4 @@
 #quoteBanner {
-    background-color: #A8D0E6;
     color: white;
 }
 
@@ -8,10 +7,18 @@
 }
 
 #mainBackground {
-    background-color: #A8D0E6;
+    background-image: linear-gradient(#A8D0E6, #DA7B93);
 }
 
 #trendingCards {
-    background-color: #DA7B93;
+    background-color: #E8A87C;
 
+}
+
+#trendingArticlesText {
+    color: white;
+}
+
+#topicsText{
+    color:white;
 }
