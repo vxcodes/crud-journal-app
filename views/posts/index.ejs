@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <!-- <link href="/css/style.css" rel="stylesheet"> -->
+    <script defer src="js/scripts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <title>Here are your posts</title>
 </head>
 <body>
@@ -32,20 +38,19 @@
           </tbody>
         </table> -->
 
-        <div id="container">
+        <div id="showContainer">
           <% posts.forEach(function(p){ %>
-            <div id="post">
-              <tr>
-                <li>
+            <div id="post" class="card">
+              <div class="col-3">
+                <tr>
                   <form action="/posts/<%= p._id %>?_method=DELETE" method="POST">
                     <button type="submit">delete</button>
                   </form>
-                </li>
-                <td>"<%= p.title %>"</td>
-                <!-- <td><%= p.content %></td> -->
-                <td>By, <%= p.author %></td>
-                <td><a href="/posts/<%= p._id %>">DETAILS</a></td>
-              </tr>
+                  <td>"<%= p.title %>"</td>
+                  <td>By, <%= p.author %></td>
+                  <td><a href="/posts/<%= p._id %>">DETAILS</a></td>
+                </tr>
+              </div>
             </div>
          <% }) %>
         </div>
