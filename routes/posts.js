@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const postsCtrl = require('../controllers/posts');
 
+router.get('/business', postsCtrl.business);
+router.get('/selfdev', postsCtrl.selfdev);
 router.get('/generated', postsCtrl.generated);
 router.get('/', postsCtrl.main);
 router.get('/index', postsCtrl.index);

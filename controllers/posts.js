@@ -11,7 +11,21 @@ module.exports = {
     edit: editPost,
     update,
     generated,
+    business,
+    selfdev,
 
+};
+
+function business(req, res){
+    Post.find({}, function(err, posts) {
+        res.render('posts/business', {title: 'All Posts', posts});
+    });
+};
+
+function selfdev(req, res){
+    Post.find({}, function(err, posts) {
+        res.render('posts/selfdev', {title: 'All Posts', posts});
+    });
 };
 
 function generated(req, res){
