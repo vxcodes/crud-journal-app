@@ -14,7 +14,7 @@
     <link href="/style.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <title>Here are your posts</title>
+    <title>Keyword Generated Posts</title>
 </head>
 <body id="showBody"> 
   <nav id="mainNav" class="navbar navbar-expand-md navbar-light sticky-top">
@@ -25,26 +25,6 @@
       <a id="link" href="/posts" <%- title === 'Home' ? 'class="active"' : '' %>>HOME</a>
     </div>
   </nav>
-    <h1 id="showHeader">
-        Here are your posts
-    </h1>
-        <div id="showContainer">
-          <% posts.forEach(function(p){ %>
-            <div id="post" class="card" style="height: 220px; width: 230px;">
-              <div class="card-body">
-                <tr>
-                  <h4 class="card-title"><%= p.title %></h4>
-                  <!-- <h6 class="card-subtitle mb-2 text-muted"><%= p.content %></h6> -->
-                  <p class="card-text">By, <%= p.author %></p>
-                  <p class="card-text"><a href="/posts/<%= p._id %>">READ MORE</a></p>
-                  <form action="/posts/<%= p._id %>?_method=DELETE" method="POST">
-                    <button class="btn btn-outline-secondary btn-sm" type="submit">delete</button>
-                  </form>
-                </tr>
-              </div>
-            </div>
-         <% }) %>
-        </div>
-    <a href="new" class="btn btn-outline-light btn-sm">Create a New Post</a>
+  <h1>Keyword Generated Posts</h1>
 </body>
 </html>

@@ -134,10 +134,48 @@
     width: 600px;
     border: none;
     height: 50px;
+    outline: none;
 }
 
 #postContent {
     width: 600px;
     border: none;
     height: 700px;
+    outline: none;
+}
+
+#postAuthor {
+    width: 600px;
+    border: none;
+    height: 50px;
+    outline: none;
+}
+
+#postSubmitButton {
+    background-color: #c38dec;
+    border-radius: 15px 50px;
+    color: white;
+}
+
+/* 
+    Below is styling for posts/show.ejs
+*/
+
+#showBody {
+    font-family: 'Montserrat', sans-serif;
+}
+
+#postDetailTitle{
+    text-align:center
+}
+
+#postDetailAuthor{
+    text-align: center;
+}
+
+#postDetailContent{
+    margin: auto;
+    width: 50% ;
+    padding: 10px;
+
 }

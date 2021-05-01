@@ -10,7 +10,14 @@ module.exports = {
     delete: deletePost,
     edit: editPost,
     update,
+    generated,
 
+};
+
+function generated(req, res){
+    Post.find({}, function(err, posts) {
+        res.render('posts/generated', {title: 'All Posts', posts});
+    });
 };
 
 function main(req, res){
