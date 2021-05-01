@@ -9,8 +9,6 @@
     background-color: #85dcb8;
     height: 500px;
     font-size: 20px;
-    /* background-image: linear-gradient(#85dcb8, #41b3a3); */
-    /* background-image: linear-gradient(#c38d9e, white); */
 
 }
 
@@ -25,7 +23,6 @@
 }
 
 #mainNav {
-    /* background-color: #85dcb8; */
     background-color: black;
     color: white;
     font-family:'Montserrat', sans-serif;
@@ -45,15 +42,11 @@
 }
 
 #mainBackground {
-    /* background-image: linear-gradient(#A8D0E6, #DA7B93); */
-    /* background-image: linear-gradient(#FFCDA5, #EE4D5F); */
-    /* background-color:  #E3E2DF; */
     background-color: white;
 }
 
 #trendingCards {
     color: black;
-    /* background-opacity: 0; */
     border-radius: 15px 50px;
     font-family:'Montserrat', sans-serif;
     font-weight: bold;
@@ -80,8 +73,6 @@
 
 #mainCarousel {
     background-color: white;
-    /* background-image: linear-gradient(white, #41b3a3); */
-
 }
 
 /* 
@@ -108,7 +99,6 @@
 }
 
 #post {
-    /* border-radius: 15px 50px; */
     background-color:white;
     border: none;
 
