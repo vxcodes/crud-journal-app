@@ -16,7 +16,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <title>Create a new post</title>
     </head>
-<body>
+<body id="newPostBody">
     <nav id="mainNav" class="navbar navbar-expand-md navbar-light sticky-top">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">INSPIRE</a>
@@ -27,26 +27,47 @@
     </nav>
     <h1>Create a New Post</h1>
     <form id="new-form" action="index" method="POST">
-        <label>Title:
-            <input type="string" name="title">
-        </label>Content:
-            <input type="string" name="content"> 
-        </label>
-        </label>Author:
-            <input type="string" name="author">
-        </label>
-        <label>Keywords:
-            <!-- <input type="string" name="keywords"> -->
-            <select name="keywords" type="string">
-                <option value="business">Business</option>
-                <option value="self development">Self Development</option>
-                <option value="technology">Technology</option>
-            </select>
-        </label>
-        <label>Now Trending:
-            <input type="checkbox" name="nowTrending" checked>
-        </label>
-        <input type="submit" value="Add Post">
+        <input id="postSubmitButton" type="submit" value="Add Post">
+        <div id="newPostForm" class="container">
+
+            <div class="row justify-content-center">
+                <label>
+                    <input id="postTitle" type="string" placeholder="Title" name="title">
+                    <hr>
+                </label>
+            </div>
+
+            <div class="row justify-content-center">
+                <label>
+                    <!-- <input id="postContent"  type="string" placeholder="Article text here" name="content"> -->
+                    <textarea id="postContent"  type="string" placeholder="Article text here" name="content"></textarea>
+                </label>
+            </div>
+
+            <div class="row justify-content-center">
+                </label>
+                    <input id="postAuthor" type="string" placeholder="Author" name="author">
+                </label>
+            </div>
+
+            <div id="postKeywords" class="row justify-content-center">
+                <label>Keywords:
+                    <!-- <input type="string" name="keywords"> -->
+                    <select name="keywords" type="string">
+                        <option value="business">Business</option>
+                        <option value="self development">Self Development</option>
+                        <option value="technology">Technology</option>
+                    </select>
+                </label>
+            </div>
+
+            <div id="postNowTrending" class="row justify-content-center">
+                <label>Now Trending:
+                    <input type="checkbox" name="nowTrending" checked>
+                </label>
+            </div>
+        </div>
+        <!-- <input id="postSubmitButton" type="submit" value="Add Post"> -->
     </form>
 </body>
 </html>
