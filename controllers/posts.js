@@ -85,6 +85,7 @@ function deletePost(req, res){
 
 function editPost(req,res){
         res.render('posts/edit', {
+            title: 'Add Post',
             postId: req.params.id
         })
 };
