@@ -3,8 +3,10 @@ const express = require('express');
 const morgan = require('morgan');
 const methodOverride = require('method-override');
 const port = 3000;
+require('dotenv').config();
 // Connect to DB
 require('./config/database');
+
 
 const indexRouter = require('./routes/index');
 const postsRouter = require('./routes/posts');

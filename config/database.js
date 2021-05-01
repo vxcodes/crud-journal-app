@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const connectionString = 'mongodb+srv://admin:abc1234@cluster0.pa0vw.mongodb.net/calendar-app-new?retryWrites=true&w=majority';
+const connectionString = process.env.DATABASE_URI;
 
 mongoose.connect(connectionString, {
     useNewUrlParser: true,
