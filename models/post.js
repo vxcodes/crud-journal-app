@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema; // shortcut variable
 
+
 const commentSchema = new Schema({
     content: String,
 }, {timestamps: true});

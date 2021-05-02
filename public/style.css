@@ -7,8 +7,9 @@
     font-family:'Staatliches', sans-serif;
     font-weight: bold;
     background-color: #85dcb8;
-    height: 500px;
+    height: 300px;
     font-size: 20px;
+    opacity: 0.8;
 
 }
 
@@ -41,8 +42,17 @@
     background-color: none;
 }
 
-#mainBackground {
+/* #mainBackground {
     background-color: white;
+} */
+
+#mainBackground {
+    background-image: url('/imgs/building.jpg');
+    opacity:1;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #trendingCards {
@@ -73,6 +83,7 @@
 
 #mainCarousel {
     background-color: white;
+    opacity: .99;
 }
 
 
@@ -108,6 +119,19 @@
 
 #popSubjectContainer {
     background-color:  white;
+
+}
+
+.inner {
+    overflow: hidden;
+}
+
+.inner img {
+    transition: all 1.5s ease;
+}
+
+.inner:hover img{
+    transform: scale(1.5);
 }
 
 /* 
@@ -190,3 +214,5 @@
     padding: 10px;
 
 }
+
+
