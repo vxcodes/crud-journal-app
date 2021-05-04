@@ -15,7 +15,7 @@
 
 # WIREFRAME
 
-![](public/imgs/mainpage.png)
+![](public/imgs/newest.png)
 
 ![](public/imgs/allposts.png)
 

@@ -47,7 +47,7 @@
 } */
 
 #mainBackground {
-    background-image: url('/imgs/background.png');
+    background-image: url('/imgs/backgroundnew.jpeg');
     opacity:1;
     background-attachment: fixed;
     background-position: center;
@@ -71,6 +71,14 @@
     font-weight: bold;
     text-decoration: underline;
     text-decoration-color: #85dcb8;
+}
+
+#tech{
+    background-color: #e27d60;
+}
+
+#buss{
+    background-color: #c38d9e;
 }
 
 #topicsText{
@@ -223,7 +231,7 @@
 /* FOOTER */
 .footer {
     height:200px;
-    background-image: url('/imgs/background.png');
+    background-image: url('/imgs/backgroundnew.jpeg');
     opacity:1;
     background-attachment: fixed;
     background-position: center;
