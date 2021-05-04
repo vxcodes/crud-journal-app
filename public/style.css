@@ -47,7 +47,7 @@
 } */
 
 #mainBackground {
-    background-image: url('/imgs/building.jpg');
+    background-image: url('/imgs/background.png');
     opacity:1;
     background-attachment: fixed;
     background-position: center;
@@ -84,6 +84,10 @@
 #mainCarousel {
     background-color: white;
     opacity: .99;
+}
+
+.card-img-top {
+    background-color: #e8a87c;
 }
 
 
@@ -219,7 +223,7 @@
 /* FOOTER */
 .footer {
     height:200px;
-    background-image: url('/imgs/building.jpg');
+    background-image: url('/imgs/background.png');
     opacity:1;
     background-attachment: fixed;
     background-position: center;
