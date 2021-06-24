@@ -47,7 +47,7 @@
 } */
 
 #mainBackground {
-    background-image: url('/imgs/backgroundnew.jpeg');
+    background-image: url('/imgs/buildingpic.jpg');
     opacity:1;
     background-attachment: fixed;
     background-position: center;
@@ -231,7 +231,7 @@
 /* FOOTER */
 .footer {
     height:200px;
-    background-image: url('/imgs/backgroundnew.jpeg');
+    background-image: url('/imgs/buildingpic.jpg');
     opacity:1;
     background-attachment: fixed;
     background-position: center;
