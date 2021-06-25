@@ -1,58 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&display=swap" rel="stylesheet">
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- <link href="/css/style.css" rel="stylesheet"> -->
-        <script defer src="js/scripts.js"></script>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link href="/style.css" rel="stylesheet">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        <title>Create a new post</title>
-    </head>
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="js/scripts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="/style.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <title>Create a new post</title>
+</head>
 <body id="newPostBody">
-    <nav id="mainNav" class="navbar navbar-expand-md navbar-light sticky-top">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">INSPIRE</a>
-          <a id="link" href="/posts/new" <%- title === 'Add Post' ? 'class="active"' : '' %>> + ADD POST</a>
-          <a id="link" href="/posts/index" <%- title === 'All Posts' ? 'class="active"' : '' %>>YOUR POSTS</a>
-          <a id="link" href="/posts" <%- title === 'Home' ? 'class="active"' : '' %>>HOME</a>
-        </div>
-    </nav>
+    <%- include('../partials/header.ejs') %>
     <!-- <h1>Create a New Post</h1> -->
     <form id="new-form" action="index" method="POST">
         <input id="postSubmitButton" type="submit" value="Publish">
         <div id="newPostForm" class="container">
-
             <div class="row justify-content-center">
                 <label>
                     <input id="postTitle" type="string" placeholder="Title" name="title">
                     <hr>
                 </label>
             </div>
-
             <div class="row justify-content-center">
                 <label>
-                    <!-- <input id="postContent"  type="string" placeholder="Article text here" name="content"> -->
                     <textarea id="postContent"  type="string" placeholder="Article text here" name="content"></textarea>
                 </label>
             </div>
-
             <div class="row justify-content-center">
                 </label>
                     <input id="postAuthor" type="string" placeholder="Author" name="author">
                 </label>
             </div>
-
             <div id="postKeywords" class="row justify-content-center">
                 <label>Keywords:
-                    <!-- <input type="string" name="keywords"> -->
                     <select name="keywords" type="string">
                         <option value="business">Business</option>
                         <option value="self development">Self Development</option>
@@ -60,15 +46,12 @@
                     </select>
                 </label>
             </div>
-
             <div id="postNowTrending" class="row justify-content-center">
                 <label>Now Trending:
                     <input type="checkbox" name="nowTrending" checked>
                 </label>
             </div>
         </div>
-        <!-- <input id="postSubmitButton" type="submit" value="Add Post"> -->
     </form>
 </body>
 </html>
-<%- include('../partials/footer') %>

@@ -8,11 +8,14 @@
   <title><%= title %></title>
 </head>
 <body>
-  <nav>
-    <!-- <img src="/images/camera.svg"> -->
-    <a href="/posts/new" <%- title === 'Add Post' ? 'class="active"' : '' %>> + ADD POST</a>
-    <a href="/posts/index" <%- title === 'All Posts' ? 'class="active"' : '' %>>YOUR POSTS</a>
-    <a href="/posts" <%- title === 'Home' ? 'class="active"' : '' %>>HOME</a>
+  <nav id="mainNav" class="navbar navbar-expand-md navbar-light sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="/imgs/exchange.png" width="90" height="90" class="d-inline block align-top" alt="logo">
+      </a>
+      <a id="link" href="/posts/new" <%- title === 'Add Post' ? 'class="active"' : '' %>> + ADD POST</a>
+      <a id="link" href="/posts/index" <%- title === 'All Posts' ? 'class="active"' : '' %>>YOUR POSTS</a>
+      <a id="link" href="/posts" <%- title === 'Home' ? 'class="active"' : '' %>>HOME</a>
+    </div>
   </nav>
-  <main>
-    <h1><%= title %></h1>
+</body>

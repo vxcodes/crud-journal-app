@@ -17,14 +17,7 @@
     <title>Keyword Generated Posts</title>
 </head>
 <body id="showBody"> 
-  <nav id="mainNav" class="navbar navbar-expand-md navbar-light sticky-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#"></a>
-      <a id="link" href="/posts/new" <%- title === 'Add Post' ? 'class="active"' : '' %>> + ADD POST</a>
-      <a id="link" href="/posts/index" <%- title === 'All Posts' ? 'class="active"' : '' %>>YOUR POSTS</a>
-      <a id="link" href="/posts" <%- title === 'Home' ? 'class="active"' : '' %>>HOME</a>
-    </div>
-  </nav>
+  <%- include('../partials/header.ejs') %>
   <h1>Self Development</h1>
   <div id="showContainer">
     <% posts.forEach(function(p){ %>

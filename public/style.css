@@ -42,10 +42,6 @@
     background-color: none;
 }
 
-/* #mainBackground {
-    background-color: white;
-} */
-
 #mainBackground {
     background-image: url('/imgs/buildingpic.jpg');
     opacity:1;
