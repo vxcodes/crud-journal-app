@@ -1,24 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&display=swap" rel="stylesheet">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- <link href="/css/style.css" rel="stylesheet"> -->
     <script defer src="js/scripts.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link href="/style.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link href="/style.css" rel="stylesheet" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
     <title>Here are your posts</title>
-</head>
-<body id="showBody"> 
-  <%- include('../partials/header.ejs') %>
-  <section id="show-page">
+  </head>
+  <body id="showBody">
+    <%- include('../partials/header.ejs') %>
+    <section id="show-page">
       <!-- <div>Title: </div> -->
       <div id="postDetailTitle"><h2><%= post.title %></h2></div>
       <!-- <div>Author: </div> -->
@@ -33,29 +56,33 @@
     <a href="/posts/<%= postId %>/edit">Edit Post</a>
 
     <% if (post.comments.length) { %>
-      <table>
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Comment</th>
-            <th>Like</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% post.comments.forEach(function(c) { %>
-            <tr>
-              <td><%= c.createdAt.toLocaleDateString() %></td>
-              <td><%= c.content %></td>
-              <!-- <td><%= c.like %></td> -->
-            </tr>
-          <% }); %>
-        </tbody>
-      </table>
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Comment</th>
+          <th>Like</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% post.comments.forEach(function(c) { %>
+        <tr>
+          <td><%= c.createdAt.toLocaleDateString() %></td>
+          <td><%= c.content %></td>
+          <!-- <td><%= c.like %></td> -->
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
     <% } else { %>
-      <h5>No Comments Yet</h5>
+    <h5>No Comments Yet</h5>
     <% } %>
     <h2>Comments</h2>
-    <form id="add-comment-form" method="POST" action="/posts/<%= post._id %>/comments">
+    <form
+      id="add-comment-form"
+      method="POST"
+      action="/posts/<%= post._id %>/comments"
+    >
       <label>Comment:</label>
       <textarea name="content"></textarea>
       <label>Like:</label>
@@ -63,6 +90,6 @@
         <option value="like">like</option>
         <option value="dislike">dislike</option>
       </select>
-      <input type="submit" value="Add Comment">
-    </form>
-</body>
+      <input type="submit" value="Add Comment" />
+    </form> </body
+></html>

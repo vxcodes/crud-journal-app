@@ -8,14 +8,12 @@ require('dotenv').config();
 // Connect to DB
 require('./config/database');
 
-
 const indexRouter = require('./routes/index');
 const postsRouter = require('./routes/posts');
-const commentsRouter = require('./routes/comments')
+const commentsRouter = require('./routes/comments');
 
 // Set up express app
 const app = express();
-
 
 // Configure the app with app.set()
 app.set('view engine', 'ejs');
@@ -24,17 +22,17 @@ app.set('view engine', 'ejs');
 app.use(methodOverride('_method'));
 app.use(express.static('public'));
 app.use(morgan('dev'));
-app.use(express.urlencoded({extended: false}));
-
-
+app.use(express.urlencoded({ extended: false }));
 
 // Mount routes with app.use()
 app.use('/', indexRouter);
 app.use('/posts', postsRouter);
 app.use('/', commentsRouter);
 
+app.listen(port, function () {
+  console.log(`Express is listening on port:${port}`);
+});
 
-
-app.listen(port, function(){
-    console.log(`Express is listening on port:${port}`);
-}); 
+const sayHello = (fname) => {
+  console.log('hi');
+};

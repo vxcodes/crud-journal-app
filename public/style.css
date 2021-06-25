@@ -3,143 +3,135 @@
 */
 
 #quoteBanner {
-    color: black;
-    font-family:'Staatliches', sans-serif;
-    font-weight: bold;
-    background-color: #85dcb8;
-    height: 300px;
-    font-size: 20px;
-    opacity: 0.8;
-
+  color: black;
+  font-family: 'Staatliches', sans-serif;
+  font-weight: bold;
+  background-color: #85dcb8;
+  height: 300px;
+  font-size: 20px;
+  opacity: 0.8;
 }
 
-#headingTitle{
-    color: #e8a87c;
-    text-decoration: underline;
-    text-decoration-color: #e27d60;
+#headingTitle {
+  color: #e8a87c;
+  text-decoration: underline;
+  text-decoration-color: #e27d60;
 }
 
-#headingText{
-    font-family: 'Montserrat', sans-serif ;
+#headingText {
+  font-family: 'Montserrat', sans-serif;
 }
 
 #mainNav {
-    background-color: black;
-    color: white;
-    font-family:'Montserrat', sans-serif;
-    font-weight: bold;
+  background-color: black;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
 }
 
-#link{
-    color: white;
-    text-decoration: none;
-    background-color: none;
+#link {
+  color: white;
+  text-decoration: none;
+  background-color: none;
 }
 
 #trendingArticlesLink {
-    color:black;
-    text-decoration: none;
-    background-color: none;
+  color: black;
+  text-decoration: none;
+  background-color: none;
 }
 
 #mainBackground {
-    background-image: url('/imgs/buildingpic.jpg');
-    opacity:1;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-image: url('/imgs/buildingpic.jpg');
+  opacity: 1;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #trendingCards {
-    color: black;
-    border-radius: 15px 50px;
-    font-family:'Montserrat', sans-serif;
-    font-weight: bold;
-    border: none;
-
-
+  color: black;
+  border-radius: 15px 50px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  border: none;
 }
 
 #trendingArticlesText {
-    color: #e8a87c;
-    font-family:'Staatliches', sans-serif;
-    font-weight: bold;
-    text-decoration: underline;
-    text-decoration-color: #85dcb8;
+  color: #e8a87c;
+  font-family: 'Staatliches', sans-serif;
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-color: #85dcb8;
 }
 
-#tech{
-    background-color: #e27d60;
+#tech {
+  background-color: #e27d60;
 }
 
-#buss{
-    background-color: #c38d9e;
+#buss {
+  background-color: #c38d9e;
 }
 
-#topicsText{
-    color: #e8a87c;
-    font-family:'Staatliches', sans-serif;
-    font-weight: bold;
-    text-decoration: underline;
-    text-decoration-color: #c38d9e;
+#topicsText {
+  color: #e8a87c;
+  font-family: 'Staatliches', sans-serif;
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-color: #c38d9e;
 }
 
 #mainCarousel {
-    background-color: white;
-    opacity: .99;
+  background-color: white;
+  opacity: 0.99;
 }
 
 .card-img-top {
-    background-color: #e8a87c;
+  background-color: #e8a87c;
 }
-
-
 
 /* 
     Below is styling for posts/index.ejs 
 */
 
 #showContainer {
-    display: grid;
-    grid-template-columns: 300px 300px ;
-    grid-template-rows: 230px;
-    font-family:'Montserrat', sans-serif;
-    font-weight: bold;
-
+  display: grid;
+  grid-template-columns: 300px 300px;
+  grid-template-rows: 230px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
 }
 
 #showBody {
-    background-color: white;
-    color: black;
+  background-color: white;
+  color: black;
 }
 
 #showHeader {
-    font-family:'Montserrat', sans-serif;
-    font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
 }
 
 #post {
-    background-color:white;
-    border: none;
-
+  background-color: white;
+  border: none;
 }
 
 #popSubjectContainer {
-    background-color:  white;
-
+  background-color: white;
 }
 
 .inner {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .inner img {
-    transition: all 1.5s ease;
+  transition: all 1.5s ease;
 }
 
-.inner:hover img{
-    transform: scale(1.5);
+.inner:hover img {
+  transform: scale(1.5);
 }
 
 /* 
@@ -147,57 +139,56 @@
 */
 
 #postTitle {
-    text-align: center;
+  text-align: center;
 }
 
 #postAuthor {
-    text-align: center;
+  text-align: center;
 }
 
-#postContent{
-    text-align: center
+#postContent {
+  text-align: center;
 }
 
 /*
     Below is styling for posts/new.ejs
 */
 
-#newPostBody{
-
+#newPostBody {
 }
 
 #newPostForm {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
 }
 
 #postTitle {
-    display: block;
-    box-sizing: border-box;
-    width: 600px;
-    border: none;
-    height: 50px;
-    outline: none;
+  display: block;
+  box-sizing: border-box;
+  width: 600px;
+  border: none;
+  height: 50px;
+  outline: none;
 }
 
 #postContent {
-    width: 600px;
-    border: none;
-    height: 700px;
-    outline: none;
+  width: 600px;
+  border: none;
+  height: 700px;
+  outline: none;
 }
 
 #postAuthor {
-    width: 600px;
-    border: none;
-    height: 50px;
-    outline: none;
+  width: 600px;
+  border: none;
+  height: 50px;
+  outline: none;
 }
 
 #postSubmitButton {
-    background-color: #c38dec;
-    border-radius: 15px 50px;
-    color: white;
+  background-color: #c38dec;
+  border-radius: 15px 50px;
+  color: white;
 }
 
 /* 
@@ -205,47 +196,43 @@
 */
 
 #showBody {
-    font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
-#postDetailTitle{
-    text-align:center
+#postDetailTitle {
+  text-align: center;
 }
 
-#postDetailAuthor{
-    text-align: center;
+#postDetailAuthor {
+  text-align: center;
 }
 
-#postDetailContent{
-    margin: auto;
-    width: 50% ;
-    padding: 10px;
-
+#postDetailContent {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
 }
-
 
 /* FOOTER */
 .footer {
-    height:200px;
-    background-image: url('/imgs/buildingpic.jpg');
-    opacity:1;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-
+  height: 200px;
+  background-image: url('/imgs/buildingpic.jpg');
+  opacity: 1;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
 
 .footer .footer-bottom {
-    background-color: thistle;
-    height:25px;
-    width: 100%;
-    color: black;
-    text-align: center;
-    position: absolute;
-    bottom:0px;
-    left:0px;
-    padding:20px;
+  background-color: thistle;
+  height: 25px;
+  width: 100%;
+  color: black;
+  text-align: center;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  padding: 20px;
 }
-
