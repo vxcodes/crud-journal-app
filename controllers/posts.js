@@ -60,6 +60,7 @@ function newPost(req, res) {
   res.render('posts/new', { title: 'Add Post' });
 }
 
+
 function create(req, res) {
   // convert nowShowing's checkbox of nothing or "on" to boolean
   req.body.nowTrending = !!req.body.nowTrending;

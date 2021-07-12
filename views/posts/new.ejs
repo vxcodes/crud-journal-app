@@ -14,11 +14,27 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <title>Create a new post</title>
+    <script>
+    function validateForm() {
+        let a = document.forms["myForm"]["title"].value;
+        let b = document.forms["myForm"]["content"].value;
+        let c = document.forms["myForm"]["author"].value;
+        let d = document.forms["myForm"]["keywords"].value;
+        let e = document.forms["myForm"]["nowTrending"].value;
+        if (a == "" || a==null || b == "" || b==null || c == "" || c==null ||  d == "" || d==null || e == "" || e == null) {
+            alert("All fields must be filled out");
+            return false;
+        }else{
+            document
+        }
+    }
+    </script>
 </head>
 <body id="newPostBody">
     <%- include('../partials/header.ejs') %>
+
     <!-- <h1>Create a New Post</h1> -->
-    <form id="new-form" action="index" method="POST">
+    <form name="myForm" id="new-form" action="index" method="POST" onsubmit="return validateForm()" required>
         <input id="postSubmitButton" type="submit" value="Publish">
         <div id="newPostForm" class="container">
             <div class="row justify-content-center">
