@@ -39,6 +39,7 @@ const userSchema = new mongoose.Schema({
   name: String,
   email: String,
   avatarURL: String,
+  googleId: String,
   posts: [postSchema],
   comments: [commentSchema],
 }, {
