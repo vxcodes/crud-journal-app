@@ -30,7 +30,13 @@ passport.use(new GoogleStrategy({
 
 }))
 // passport.serializeUser <-- gets called one time when user logs in to create a session
-
+passport.serializeUser(function(user, done) {
+    done(null, user.id);
+});
 // passport.deserializeUser <-- gets called with each request
 // then decodes the cookie and looks up the user in session storage and creates req.user for user information
-
+passport.deserializeUser(function(id, done) {
+    User.findById(id, function(err, user){
+        done(err, user);
+    });
+})
