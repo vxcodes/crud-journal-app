@@ -32,7 +32,7 @@ app.use(session({
   saveUninitialized: true
 }));
 
-app.use(passport.initialize);
+app.use(passport.initialize());
 app.use(passport.session());
 // Mount routes with app.use()
 app.use('/', indexRouter);
