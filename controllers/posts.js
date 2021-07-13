@@ -1,4 +1,4 @@
-const Post = require('../models/post');
+const User = require('../models/post');
 
 module.exports = {
   main,
@@ -16,37 +16,37 @@ module.exports = {
 };
 
 function business(req, res) {
-  Post.find({}, function (err, posts) {
+  User.find({}, function (err, posts) {
     res.render('posts/business', { title: 'All Posts', posts });
   });
 }
 
 function selfdev(req, res) {
-  Post.find({}, function (err, posts) {
+  User.find({}, function (err, posts) {
     res.render('posts/selfdev', { title: 'All Posts', posts });
   });
 }
 
 function generated(req, res) {
-  Post.find({}, function (err, posts) {
+  User.find({}, function (err, posts) {
     res.render('posts/generated', { title: 'All Posts', posts });
   });
 }
 
 function main(req, res) {
-  Post.find({}, function (err, posts) {
+  User.find({}, function (err, posts) {
     res.render('index', { title: 'Homepage', posts });
   });
 }
 
 function index(req, res) {
-  Post.find({}, function (err, posts) {
+  User.find({}, function (err, posts) {
     res.render('posts/index', { title: 'All Posts', posts });
   });
 }
 
 function show(req, res) {
-  Post.findById(req.params.id, function (err, post) {
+  User.findById(req.params.id, function (err, post) {
     res.render('posts/show', {
       title: 'Post Content',
       post,
@@ -69,14 +69,14 @@ function create(req, res) {
     if (req.body[key] === '') delete req.body[key];
   }
 
-  Post.create(req.body, function (err, post) {
+  User.create(req.body, function (err, post) {
     if (err) return res.redirect('/posts/new');
     res.redirect('index');
   });
 }
 
 function deletePost(req, res) {
-  Post.findByIdAndDelete(req.params.id, function (err, posts) {
+  User.findByIdAndDelete(req.params.id, function (err, posts) {
     if (err) return res.redirect('/posts/new');
   });
   res.redirect('index');
@@ -91,7 +91,7 @@ function editPost(req, res) {
 
 function update(req, res) {
   req.body.nowTrending = !!req.body.nowTrending;
-  Post.findByIdAndUpdate(req.params.id, req.body, function (err, post) {
+  User.findByIdAndUpdate(req.params.id, req.body, function (err, post) {
     console.log(post, 'is the post');
     res.redirect('index');
   });

@@ -35,4 +35,14 @@ const postSchema = new Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model('Post', postSchema);
+const userSchema = new mongoose.Schema({
+  name: String,
+  email: String,
+  avatarURL: String,
+  posts: [postSchema],
+  comments: [commentSchema],
+}, {
+  timestamps: true
+})
+
+module.exports = mongoose.model('User', userSchema);
